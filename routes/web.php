@@ -14,5 +14,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $students = [
+        'Marco',
+        'Gino',
+        'Claudia',
+    ];
+
+    $data = compact('students');
+
+    // dd($data);
+
+    return view('home', $data);
+
+    // return view('home', [
+    //     'students' => $students
+    // ]);
+});
+
+Route::get('/contatti', function () {
+    return view('contact');
 });
